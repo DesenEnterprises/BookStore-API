@@ -56,6 +56,8 @@ namespace BookStore_API
 
             services.AddScoped<IAuthorRepository, AuthorRepository>();
 
+            services.AddScoped<IBookRepository, BookRepository>();
+
             //services.AddRazorPages();
             services.AddControllers();
         }

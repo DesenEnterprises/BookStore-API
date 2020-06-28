@@ -43,6 +43,45 @@
             <param name="id"></param>
             <returns></returns>
         </member>
+        <member name="T:BookStore_API.Controllers.BooksController">
+            <summary>
+            book controller to interact with books table[
+            </summary>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.GetBooks">
+            <summary>
+            get all books
+            </summary>
+            <returns>list of books</returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.GetBook(System.Int32)">
+            <summary>
+            get a book by id
+            </summary>
+            <returns>book</returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.Create(BookStore_API.DTOs.BookCreateDTO)">
+            <summary>
+            create a book
+            </summary>
+            <param name="bookDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.Update(System.Int32,BookStore_API.DTOs.BookUpdateDTO)">
+            <summary>
+            update a book
+            </summary>
+            <param name="id"></param>
+            <param name="bookDTO"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BookStore_API.Controllers.BooksController.Delete(System.Int32)">
+            <summary>
+            delete a book
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:BookStore_API.Controllers.HomeController">
             <summary>
             This is the Book Store API controller
