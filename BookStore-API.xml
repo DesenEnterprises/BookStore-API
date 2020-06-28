@@ -119,5 +119,12 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="M:BookStore_API.Controllers.UsersController.Login(BookStore_API.DTOs.UserDTO)">
+            <summary>
+            user login endpoint
+            </summary>
+            <param name="userDTO"></param>
+            <returns></returns>
+        </member>
     </members>
 </doc>

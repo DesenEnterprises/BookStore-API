@@ -7,6 +7,7 @@ using BookStore_API.Contracts;
 using BookStore_API.Data;
 using BookStore_API.DTOs;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -38,6 +39,7 @@ namespace BookStore_API.Controllers
         /// </summary>
         /// <returns>List of authors</returns>
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAuthors()
         {
             try
@@ -59,6 +61,7 @@ namespace BookStore_API.Controllers
         /// </summary>
         /// <returns>List of authors</returns>
         [HttpGet("{id}")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAuthor(int id)
         {
             try
@@ -86,6 +89,7 @@ namespace BookStore_API.Controllers
         /// <param name="authorDTO"></param>
         /// <returns></returns>
         [HttpPost]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -132,6 +136,7 @@ namespace BookStore_API.Controllers
         /// <param name="authorDTO"></param>
         /// <returns></returns>
         [HttpPatch("{id}")]
+        [Authorize(Roles = "Administrator, Customer")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -179,6 +184,7 @@ namespace BookStore_API.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Administrator")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
